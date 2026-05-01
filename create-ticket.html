@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SupportOps API | Create Ticket</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Create Ticket</h1>
+      <p>Create a new support ticket and let the API detect category and priority.</p>
+    </div>
+
+    <a href="dashboard.html" class="secondary-link">Back to Dashboard</a>
+  </header>
+
+  <main class="form-page">
+    <section class="form-card">
+      <form id="create-ticket-form">
+        <div class="form-group">
+          <label for="ticket-subject">Subject</label>
+          <input
+            type="text"
+            id="ticket-subject"
+            placeholder="Example: My order has not arrived"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="ticket-description">Description</label>
+          <textarea
+            id="ticket-description"
+            rows="7"
+            placeholder="Describe the customer issue..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="primary-button">Create Ticket</button>
+
+        <p class="form-message" id="create-ticket-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/create-ticket.js"></script>
+</body>
+</html>

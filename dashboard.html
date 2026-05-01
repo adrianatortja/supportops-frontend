@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SupportOps API | Dashboard</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>SupportOps Dashboard</h1>
+      <p>Manage support tickets and view analytics.</p>
+    </div>
+
+    <button class="secondary-button" id="logout-button">Logout</button>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span>Total Tickets</span>
+        <strong id="total-tickets">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>Open Tickets</span>
+        <strong id="open-tickets">0</strong>
+      </article>
+
+      <article class="stat-card">
+        <span>High Priority</span>
+        <strong id="high-priority-tickets">0</strong>
+      </article>
+    </section>
+
+    <section class="dashboard-actions">
+      <h2>Tickets</h2>
+      <a href="create-ticket.html" class="primary-link">Create Ticket</a>
+    </section>
+
+    <section class="tickets-panel">
+      <p id="tickets-message">Loading tickets...</p>
+      <div id="tickets-list" class="tickets-list"></div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
