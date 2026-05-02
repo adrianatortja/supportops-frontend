@@ -1,3 +1,5 @@
+
+
 const accessToken = localStorage.getItem("accessToken");
 
 const logoutButton = document.getElementById("logout-button");
@@ -87,6 +89,10 @@ function renderTickets(tickets) {
         <span>${ticket.category}</span>
         <span>${ticket.priority}</span>
       </div>
+
+      <a class="ticket-link" href="ticket-detail.html?id=${ticket.id}">
+        View Details
+      </a>
     `;
 
     ticketsList.appendChild(ticketCard);

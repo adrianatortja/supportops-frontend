@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SupportOps API | Ticket Detail</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>SupportOps Ticket Detail</h1>
+      <p>View ticket details and suggested support response.</p>
+    </div>
+
+    <button class="secondary-button" id="logoutButton">Logout</button>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="dashboard-actions">
+      <h2>Ticket Detail</h2>
+
+      <div>
+        <a href="dashboard.html" class="primary-link">Back to Dashboard</a>
+        <button class="secondary-button" id="deleteTicketButton">Delete Ticket</button>
+      </div>
+    </section>
+
+    <section class="tickets-panel">
+      <div id="ticketDetail">
+        <p>Loading ticket...</p>
+      </div>
+    </section>
+
+    <section class="dashboard-actions">
+      <h2>Suggested Reply</h2>
+      <a href="create-ticket.html" class="primary-link">Create Ticket</a>
+    </section>
+
+    <section class="tickets-panel">
+      <div id="suggestedReply">
+        <p>Loading suggested reply...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/ticket-detail.js"></script>
+</body>
+</html>
