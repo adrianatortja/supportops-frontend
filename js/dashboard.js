@@ -1,5 +1,3 @@
-
-
 const accessToken = localStorage.getItem("accessToken");
 
 const logoutButton = document.getElementById("logout-button");
@@ -52,11 +50,11 @@ function updateDashboardStats(tickets) {
   const totalTickets = tickets.length;
 
   const openTickets = tickets.filter(function (ticket) {
-    return ticket.status === "open";
+    return ticket.status.toLowerCase() === "open";
   }).length;
 
   const highPriorityTickets = tickets.filter(function (ticket) {
-    return ticket.priority === "high";
+    return ticket.priority.toLowerCase() === "high";
   }).length;
 
   totalTicketsElement.textContent = totalTickets;
@@ -78,6 +76,9 @@ function renderTickets(tickets) {
     const ticketCard = document.createElement("article");
     ticketCard.classList.add("ticket-card");
 
+    const statusClass = ticket.status.toLowerCase();
+    const priorityClass = ticket.priority.toLowerCase();
+
     ticketCard.innerHTML = `
       <div>
         <h3>${ticket.subject}</h3>
@@ -85,9 +86,17 @@ function renderTickets(tickets) {
       </div>
 
       <div class="ticket-meta">
-        <span>${ticket.status}</span>
-        <span>${ticket.category}</span>
-        <span>${ticket.priority}</span>
+        <span class="badge badge-${statusClass}">
+          ${ticket.status}
+        </span>
+
+        <span class="badge">
+          ${ticket.category}
+        </span>
+
+        <span class="badge badge-${priorityClass}">
+          ${ticket.priority} Priority
+        </span>
       </div>
 
       <a class="ticket-link" href="ticket-detail.html?id=${ticket.id}">

@@ -16,8 +16,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const ticketId = urlParams.get("id");
 
 if (!ticketId) {
-  ticketDetail.innerHTML = "<p>No ticket ID found. Please go back to the dashboard and click View Details.</p>";
-  suggestedReply.innerHTML = "<p>Suggested reply cannot be loaded without a ticket ID.</p>";
+  ticketDetail.innerHTML =
+    "<p>No ticket ID found. Please go back to the dashboard and click View Details.</p>";
+  suggestedReply.innerHTML =
+    "<p>Suggested reply cannot be loaded without a ticket ID.</p>";
   editTicketLink.style.display = "none";
   deleteTicketButton.style.display = "none";
 } else {
@@ -48,13 +50,32 @@ async function loadTicketDetail() {
 
     const ticket = await response.json();
 
+    const statusClass = ticket.status.toLowerCase();
+    const priorityClass = ticket.priority.toLowerCase();
+
     ticketDetail.innerHTML = `
-      <p><strong>Subject:</strong> ${ticket.subject}</p>
-      <p><strong>Message:</strong> ${ticket.message}</p>
-      <p><strong>Status:</strong> ${ticket.status}</p>
-      <p><strong>Category:</strong> ${ticket.category}</p>
-      <p><strong>Priority:</strong> ${ticket.priority}</p>
-      <p><strong>Created At:</strong> ${new Date(ticket.created_at).toLocaleString()}</p>
+      <div class="detail-section">
+        <h2>${ticket.subject}</h2>
+
+        <div class="ticket-meta">
+          <span class="badge badge-${statusClass}">
+            ${ticket.status}
+          </span>
+
+          <span class="badge">
+            ${ticket.category}
+          </span>
+
+          <span class="badge badge-${priorityClass}">
+            ${ticket.priority} Priority
+          </span>
+        </div>
+
+        <p><strong>Message:</strong></p>
+        <p>${ticket.message}</p>
+
+        <p><strong>Created At:</strong> ${new Date(ticket.created_at).toLocaleString()}</p>
+      </div>
     `;
   } catch (error) {
     ticketDetail.innerHTML = "<p>Something went wrong while loading the ticket.</p>";
@@ -83,7 +104,8 @@ async function loadSuggestedReply() {
       <p>${data.suggested_reply}</p>
     `;
   } catch (error) {
-    suggestedReply.innerHTML = "<p>Something went wrong while loading the suggested reply.</p>";
+    suggestedReply.innerHTML =
+      "<p>Something went wrong while loading the suggested reply.</p>";
     console.log("Load suggested reply error:", error);
   }
 }

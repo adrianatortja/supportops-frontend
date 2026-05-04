@@ -342,3 +342,185 @@ body {
 }
 
 
+/* =========================
+   Ticket Badges
+========================= */
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status badges */
+.badge-open {
+  background-color: #e7f0ff;
+  color: #1d4ed8;
+}
+
+.badge-pending {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+
+.badge-closed {
+  background-color: #ecfdf5;
+  color: #047857;
+}
+
+/* Priority badges */
+.badge-low {
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+
+.badge-medium {
+  background-color: #fefce8;
+  color: #a16207;
+}
+
+.badge-high {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.ticket-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+/* =========================
+   Improved Ticket Cards
+========================= */
+
+.ticket-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+.ticket-card h3 {
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.ticket-card p {
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.ticket-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ticket-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Ticket Detail Page
+========================= */
+
+.detail-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.detail-section h2 {
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.detail-section p {
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* =========================
+   Messages / Alerts
+========================= */
+
+.message {
+  margin: 16px 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  font-weight: 500;
+}
+
+.message:empty {
+  display: none;
+}
+
+/* =========================
+   Suggested Reply
+========================= */
+
+#suggestedReply {
+  background: #ffffff;
+  border-left: 5px solid #2563eb;
+  border-radius: 14px;
+  padding: 20px;
+  color: #111827;
+  line-height: 1.6;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+#suggestedReply p {
+  margin: 0;
+}
+
+/* =========================
+   Page Layout Polish
+========================= */
+
+body {
+  background: #f3f4f6;
+}
+
+.app-header,
+.dashboard-page {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-header {
+  margin-top: 24px;
+}
+
+.dashboard-page {
+  padding-bottom: 40px;
+}
+
+.dashboard-actions,
+.tickets-panel {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+

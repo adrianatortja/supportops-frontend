@@ -18,33 +18,43 @@
     <a href="dashboard.html" class="secondary-link">Back to Dashboard</a>
   </header>
 
-  <main class="form-page">
-    <section class="form-card">
-      <form id="create-ticket-form">
-        <div class="form-group">
-          <label for="ticket-subject">Subject</label>
-          <input
-            type="text"
-            id="ticket-subject"
-            placeholder="Example: My order has not arrived"
-            required
-          />
-        </div>
+  <main class="dashboard-page">
+    <section class="dashboard-actions">
+      <h2>New Ticket</h2>
 
-        <div class="form-group">
-          <label for="ticket-description">Description</label>
-          <textarea
-            id="ticket-description"
-            rows="7"
-            placeholder="Describe the customer issue..."
-            required
-          ></textarea>
-        </div>
+      <div>
+        <a href="dashboard.html" class="primary-link">Back to Dashboard</a>
+      </div>
+    </section>
 
-        <button type="submit" class="primary-button">Create Ticket</button>
+    <section class="tickets-panel">
+      <div class="form-card">
+        <form id="create-ticket-form">
+          <div class="form-group">
+            <label for="ticket-subject">Subject</label>
+            <input
+              type="text"
+              id="ticket-subject"
+              placeholder="Example: My order has not arrived"
+              required
+            />
+          </div>
 
-        <p class="form-message" id="create-ticket-message"></p>
-      </form>
+          <div class="form-group">
+            <label for="ticket-description">Description</label>
+            <textarea
+              id="ticket-description"
+              rows="7"
+              placeholder="Describe the customer issue..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="primary-button">Create Ticket</button>
+
+          <p class="message" id="create-ticket-message"></p>
+        </form>
+      </div>
     </section>
   </main>
 
