@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SupportOps API | Edit Ticket</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Edit Support Ticket</h1>
+      <p>Update ticket status and details.</p>
+    </div>
+
+    <button class="secondary-button" id="logoutButton">Logout</button>
+  </header>
+
+  <main class="dashboard-page">
+    <section class="dashboard-actions">
+      <h2>Edit Ticket</h2>
+      <a href="dashboard.html" class="primary-link">Back to Dashboard</a>
+    </section>
+
+    <section class="tickets-panel">
+      <p id="editMessage"></p>
+
+      <form id="editTicketForm">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status" name="status" required>
+            <option value="open">Open</option>
+            <option value="pending">Pending</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-button">Save Changes</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/edit-ticket.js"></script>
+</body>
+</html>

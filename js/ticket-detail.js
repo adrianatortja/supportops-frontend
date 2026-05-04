@@ -6,6 +6,7 @@ const ticketDetail = document.getElementById("ticketDetail");
 const suggestedReply = document.getElementById("suggestedReply");
 const logoutButton = document.getElementById("logoutButton");
 const deleteTicketButton = document.getElementById("deleteTicketButton");
+const editTicketLink = document.getElementById("editTicketLink");
 
 if (!token) {
   window.location.href = "index.html";
@@ -17,6 +18,10 @@ const ticketId = urlParams.get("id");
 if (!ticketId) {
   ticketDetail.innerHTML = "<p>No ticket ID found. Please go back to the dashboard and click View Details.</p>";
   suggestedReply.innerHTML = "<p>Suggested reply cannot be loaded without a ticket ID.</p>";
+  editTicketLink.style.display = "none";
+  deleteTicketButton.style.display = "none";
+} else {
+  editTicketLink.href = `edit-ticket.html?id=${ticketId}`;
 }
 
 async function loadTicketDetail() {
